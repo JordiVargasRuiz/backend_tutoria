@@ -11,6 +11,9 @@ CORS(app)
 
 print("API Key cargada:", os.getenv("API_KEY"))
 
+@app.route("/", methods=["GET"])  # ✅ Ruta raíz para evitar error 404
+def home():
+    return jsonify({"mensaje": "Bienvenido a la API"}), 200
 
 @app.route("/preguntar", methods=["POST"])
 def preguntar():
