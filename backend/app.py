@@ -43,7 +43,7 @@ def preguntar():
         if not api_key:
             return jsonify({"error": "API Key no configurada correctamente"}), 500
 
-        modelo = genai.GenerativeModel("gemini-1.5-pro-latest")
+        modelo = genai.GenerativeModel("gemini-2.0-flash")
         respuesta = modelo.generate_content(pregunta)
 
         return jsonify({"respuesta": respuesta.text})
